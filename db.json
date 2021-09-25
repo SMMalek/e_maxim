@@ -1,0 +1,17 @@
+{
+  "services": [{ "id": 1, "title": "Falva Mica",
+    "thumbnailUrl": "https://i.ibb.co/LPtcmNg/114-a.jpg", "rate": 34,
+    "rating": 4, "specialist": { "id": 1, "fullName": "Mark brone" }},
+    { "id": 2, "title": "Monty Sante",
+      "thumbnailUrl": "https://i.ibb.co/MPJQZqc/114-b.jpg", "rate": 50,
+      "rating": 3, "specialist": { "id": 1, "fullName": "Mark Z-Bone" }},
+    { "id": 3, "title": "Falva con manto deleila",
+      "thumbnailUrl": "https://i.ibb.co/rfMBsLt/114-c.jpg", "rate": 42,
+      "rating": 5, "specialist": { "id": 1, "fullName": "Mark brone" }},
+    { "id": 4, "title": "Vern a qeitango",
+      "thumbnailUrl": "https://i.ibb.co/8Dfp0Yd/114-d.jpg", "rate": 39,
+      "rating": 5, "specialist": { "id": 1, "fullName": "Mark brone" }}
+  ]
+}
+
+
