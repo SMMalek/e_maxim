@@ -64,7 +64,7 @@ export function Navbar(props) {
             <AccessibilityContainer>
                 {!isMobile &&
                 <AnchorLink>
-                    Services
+                    Serxices
                 </AnchorLink>}
                 {!isMobile &&
                 <Marginer direction="horizontal" margin={0}/>
