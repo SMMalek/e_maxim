@@ -10,7 +10,6 @@ const PageWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-
 `;
 
 export function PageContainer(props) {
@@ -27,7 +26,4 @@ export const InnerPageContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-
- 
-
 `;
