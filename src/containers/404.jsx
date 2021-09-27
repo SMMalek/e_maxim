@@ -1,7 +1,4 @@
 import React from'react'
-
-
-
 export function NotFoundPage () {
 
     return(
@@ -10,4 +7,3 @@ export function NotFoundPage () {
         </div>
     );
 }
-
