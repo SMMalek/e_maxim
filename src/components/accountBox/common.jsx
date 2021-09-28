@@ -49,7 +49,7 @@ export const Input = styled.input`
   &:focus {
     outline: none;
     //box-shadow: 0px 0px 2px rgba(200, 200, 200, 1);
-    border-bottom: 2px solid #5963c3;
+    border-bottom: 2px solid #514255;
   }
 `;
 
@@ -63,20 +63,14 @@ export const SubmitButton = styled.button`
   border-radius: 100px 100px 100px 100px;
   cursor: pointer;
   transition: all, 240ms ease-in-out;
-  background: #8360c3; /* fallback for old browsers */
-  background: -webkit-linear-gradient(
-    to right,
-    #2ebf91,
-    #8360c3
-  ); /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(
-    to right,
-    #2ebf91,
-    #8360c3
-  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: #514255; /* fallback for old browsers */
+  background: -webkit-linear-gradient(#514255); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(514255); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
   &:focus {
     outline: none;
   }
+
   &:hover {
     filter: brightness(1.03);
   }

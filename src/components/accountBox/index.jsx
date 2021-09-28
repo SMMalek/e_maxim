@@ -5,7 +5,8 @@ import {LoginForm} from "./loginForm";
 import {AccountContext} from "./context";
 import {SignupForm} from "./signupForm";
 import {MutedLink} from "./common";
-
+//rgb(58 0 11), rgb(135 68 80 / 98%));
+//#874450, #2c3c54fa
 const BoxContainer = styled.div`
   width: 280px;
   min-height: 564px;
@@ -38,16 +39,16 @@ const BackDrop = styled(motion.div)`
   transform: rotate(60deg);
   top: -290px;
   left: -70px;
-  background: #8360c3; /* fallback for old browsers */
+  background: #585656fa; /* fallback for old browsers */
   background: -webkit-linear-gradient(
     to right,
-    #2ebf91,
-    #8360c3
+    #874450,
+    #585656fa
   ); /* Chrome 10-25, Safari 5.1-6 */
   background: linear-gradient(
     to right,
-    #2ebf91,
-    #8360c3
+    #874450,
+    #585656fa
   ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 `;
 
