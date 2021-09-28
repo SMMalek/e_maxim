@@ -22,7 +22,7 @@ const ContentContainer = styled.div`
 
 `;
 
-export function HomePage(props) {
+export function HomePage() {
 
     const isMobile = useMediaQuery({maxWidth: deviceSize.mobile});
 
@@ -33,11 +33,11 @@ export function HomePage(props) {
             </TopSection>
             <Marginer direction="vertical" margin="2em"/>
             <InnerPageContainer>
-                <ContentContainer>
+                <ContentContainer id="lservices">
                     <Service/>
                 </ContentContainer>
                 <Marginer direction="vertical" margin="3em"/>
-                <SpecialistAd/>
+                <SpecialistAd />
                 {!isMobile &&
                 < Marginer direction="vertical" margin="3em"/>
                 }

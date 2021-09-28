@@ -80,12 +80,12 @@ const StandOutImage = styled.div`
   }
 `;
 
-export function SpecialistAd(props) {
+export function SpecialistAd() {
 
     const isMobile = useMediaQuery({maxWidth: deviceSize.mobile});
 
     return (
-        <SpecialistAdContainer>
+        <SpecialistAdContainer id="labout">
             <ContentContainer>
                 <SloganContainer>
                     <BrandLogo logoSize={isMobile ? 45 : 70} textSize={isMobile ? 18 : 25}/>
@@ -103,4 +103,4 @@ export function SpecialistAd(props) {
             </ContentContainer>
         </SpecialistAdContainer>
     )
-};
+}

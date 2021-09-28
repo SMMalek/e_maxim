@@ -6,6 +6,7 @@ import {Marginer} from "../marginer";
 import {Link} from "react-router-dom";
 import {useMediaQuery} from "react-responsive/src";
 import {deviceSize} from "../responsive";
+import {Link as Slink} from "react-scroll";
 
 const NavbarContainer = styled.div`
   width: 100%;
@@ -64,7 +65,9 @@ export function Navbar(props) {
             <AccessibilityContainer>
                 {!isMobile &&
                 <AnchorLink>
-                    Services
+                    <Slink to="lservices" spy={true} smooth={true}>
+                        Services
+                    </Slink>
                 </AnchorLink>}
                 {!isMobile &&
                 <Marginer direction="horizontal" margin={0}/>
@@ -80,7 +83,9 @@ export function Navbar(props) {
                 </Link>
                 <Marginer direction="horizontal" margin={0}/>
                 <AnchorLink>
-                    About
+                    <Slink to="labout" spy={true} smooth={true}>
+                        About
+                    </Slink>
                 </AnchorLink>
             </AccessibilityContainer>
         </NavbarContainer>
