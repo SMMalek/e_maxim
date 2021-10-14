@@ -16,10 +16,6 @@ const ContentContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-
-
-
-
 `;
 
 export function HomePage() {

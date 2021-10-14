@@ -27,7 +27,8 @@ const AccessibilityContainer = styled.div`
   align-items: center;
 `;
 
-const AnchorLink = styled.a`
+
+const ALink = styled.div`
   font-size: 14px;
   color: #fdfdfe;
   cursor: pointer;
@@ -64,11 +65,11 @@ export function Navbar(props) {
             </HLink>
             <AccessibilityContainer>
                 {!isMobile &&
-                <AnchorLink>
+                <ALink>
                     <Slink to="lservices" spy={true} smooth={true}>
                         Services
                     </Slink>
-                </AnchorLink>}
+                </ALink>}
                 {!isMobile &&
                 <Marginer direction="horizontal" margin={0}/>
                 }
@@ -82,11 +83,11 @@ export function Navbar(props) {
                     </Button>
                 </Link>
                 <Marginer direction="horizontal" margin={0}/>
-                <AnchorLink>
+                <ALink>
                     <Slink to="labout" spy={true} smooth={true}>
                         About
                     </Slink>
-                </AnchorLink>
+                </ALink>
             </AccessibilityContainer>
         </NavbarContainer>
     )

@@ -1,12 +1,11 @@
-import React, {createContext, useState} from "react";
+import React, {useState} from "react";
 import styled from "styled-components";
 import {motion} from "framer-motion";
 import {LoginForm} from "./loginForm";
 import {AccountContext} from "./context";
 import {SignupForm} from "./signupForm";
-import {MutedLink} from "./common";
-//rgb(58 0 11), rgb(135 68 80 / 98%));
-//#874450, #2c3c54fa
+import {Redirect} from 'react-router-dom'
+
 const BoxContainer = styled.div`
   width: 280px;
   min-height: 564px;
@@ -40,16 +39,12 @@ const BackDrop = styled(motion.div)`
   top: -290px;
   left: -70px;
   background: #585656fa; /* fallback for old browsers */
-  background: -webkit-linear-gradient(
-    to right,
-    #874450,
-    #585656fa
-  ); /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(
-    to right,
-    #874450,
-    #585656fa
-  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: -webkit-linear-gradient(to right,
+  #874450,
+  #585656fa); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right,
+  #874450,
+  #585656fa); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 `;
 
 const HeaderContainer = styled.div`
@@ -108,11 +103,23 @@ const expandingTransition = {
 };
 
 export function AccountBox(props) {
+
     const {initialActive} = props;
+
     const [isExpanded, setExpanded] = useState(false);
     const [active, setActive] = useState(
         initialActive ? initialActive : "signin"
     );
+
+
+    const is404 = () => {
+        if (initialActive === "signin" || initialActive === "signup") {
+            return false
+        } else {
+            return true
+        }
+    };
+
 
     const playExpandingEffect = () => {
         setExpanded(true);
@@ -145,40 +152,44 @@ export function AccountBox(props) {
         playExpandingEffect,
     };
 
-    return (
-        <AccountContext.Provider value={contextValue}>
-            <BoxContainer>
-                <TopContainer>
-                    <BackDrop
-                        variants={backdropVariants}
-                        transition={expandingTransition}
-                        initial={false}
-                        animate={isExpanded ? "expanded" : "collapsed"}
-                    />
-                    {active === "signin" && (
-                        <>
-                            <HeaderContainer>
-                                <HeaderText>Welcome</HeaderText>
-                                <HeaderText>Back</HeaderText>
-                            </HeaderContainer>
-                            <SmallText>Please sign-in to continue!</SmallText>
-                        </>
-                    )}
-                    {active === "signup" && (
-                        <>
-                            <HeaderContainer>
-                                <HeaderText>Create </HeaderText>
-                                <HeaderText>Account</HeaderText>
-                            </HeaderContainer>
-                            <SmallText>Please sign-up to continue!</SmallText>
-                        </>
-                    )}
-                </TopContainer>
-                <InnerContainer>
-                    {active === "signin" && <LoginForm/>}
-                    {active === "signup" && <SignupForm/>}
-                </InnerContainer>
-            </BoxContainer>
-        </AccountContext.Provider>
-    );
+    if (is404()) {
+        return (<Redirect to="../../containers/404"/>)
+    } else {
+        return (
+            <AccountContext.Provider value={contextValue}>
+                <BoxContainer>
+                    <TopContainer>
+                        <BackDrop
+                            variants={backdropVariants}
+                            transition={expandingTransition}
+                            initial={false}
+                            animate={isExpanded ? "expanded" : "collapsed"}
+                        />
+                        {active === "signin" && (
+                            <>
+                                <HeaderContainer>
+                                    <HeaderText>Welcome</HeaderText>
+                                    <HeaderText>Back</HeaderText>
+                                </HeaderContainer>
+                                <SmallText>Please sign-in to continue!</SmallText>
+                            </>
+                        )}
+                        {active === "signup" && (
+                            <>
+                                <HeaderContainer>
+                                    <HeaderText>Create </HeaderText>
+                                    <HeaderText>Account</HeaderText>
+                                </HeaderContainer>
+                                <SmallText>Please sign-up to continue!</SmallText>
+                            </>
+                        )}
+                    </TopContainer>
+                    <InnerContainer>
+                        {active === "signin" && <LoginForm/>}
+                        {active === "signup" && <SignupForm/>}
+                    </InnerContainer>
+                </BoxContainer>
+            </AccountContext.Provider>
+        );
+    }
 }

@@ -19,7 +19,7 @@ const TopSectionContainer = styled.div`
 
   @media screen and (max-width: ${deviceSize.mobile}px) {
     height: 700px;  
-    background-position: 50% 0px;
+    background-position: 50% 0;
 
   }
 `;
